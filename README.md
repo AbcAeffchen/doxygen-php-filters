@@ -1,5 +1,5 @@
 # doxygen-php-filters
-Filters to get Doxygen work better with PHP code
+Filters to get [Doxygen](http://www.stack.nl/~dimitri/doxygen/) ([Doxygen on GitHub](https://github.com/doxygen/doxygen)) work better with PHP code.
 
 ## How to use
 1. Choose your filter and download the `.php` file. If you want to use more than one filter, 
