@@ -1,4 +1,6 @@
 # doxygen-php-filters
+
+[![Join the chat at https://gitter.im/AbcAeffchen/doxygen-php-filters](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/AbcAeffchen/doxygen-php-filters?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 Filters to get [Doxygen](http://www.stack.nl/~dimitri/doxygen/) ([Doxygen on GitHub](https://github.com/doxygen/doxygen)) work better with PHP code.
 
 ## How to use
