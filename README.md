@@ -46,7 +46,7 @@ doxygen could get confused. This filter removes the if-statement for doxygen.
 and you have to use the string `if(!class_exists(` to get this filter work. The whole line, 
 that contains this string gets removed.
 
-### Support/Workaround for traits ###
+### Support/Workaround for traits (`traits.php`)
 Since PHP does not support inheritance from multiple classes, you maybe want to use [traits](http://php.net/manual/de/language.oop5.traits.php).
 But doxygen does not support this at all.
 
