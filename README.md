@@ -46,5 +46,39 @@ doxygen could get confused. This filter removes the if-statement for doxygen.
 and you have to use the string `if(!class_exists(` to get this filter work. The whole line, 
 that contains this string gets removed.
 
+### Support/Workaround for traits ###
+Since PHP does not support inheritance from multiple classes, you maybe want to use [traits](http://php.net/manual/de/language.oop5.traits.php).
+But doxygen does not support this at all.
+
+This filter converts a trait into a class and transforms all usages of a trait into an inheritance.
+So
+
+    class MyClass{
+        use MyTrait1, MyTrait2;
+        
+        ...
+    }
+
+becomes
+
+    class MyClass extends MyTrait, MyTrait2{
+        ...
+    }
+
+This is not valid PHP, but doxygen documents it as a multiple inheritance and you can see the methods
+of the traits in you class.
+
+**Notice**: This filter doesn't support [conflict resolution](http://php.net/manual/en/language.oop5.traits.php#language.oop5.traits.conflict).
+So 
+
+    class MyClass {
+        use MyTrait1, MyTrait2 {
+            MyTrait2::traitFunction1 insteadof MyTrait1;
+            MyTrait1::traitFunction2 insteadof MyTrait2;
+        }
+    }
+    
+will not work.
+
 ## License
 Licensed under the GPL v2.0 License.
