@@ -82,5 +82,10 @@ So
     
 will not work.
 
+## Credits
+Thanks to [Goran Rakic](http://stackoverflow.com/users/276152) for providing the class member hint filter in [this Stackoverflow answer](http://stackoverflow.com/a/8472180/3440545). 
+This gave me the first push to write more filters.  
+Thanks to [Lorenz Meyer](http://stackoverflow.com/users/1951708) for improving the traits filter.
+
 ## License
 Licensed under the GPL v2.0 License.
