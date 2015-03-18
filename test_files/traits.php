@@ -28,6 +28,11 @@ class ParentClass
     }
 }
 
+interface MyInterface
+{
+    public function interfaceFunction();
+}
+
 class TraitTest
 {
     use Trait1;
@@ -53,6 +58,32 @@ class MultiTraitTestWithExtends extends ParentClass
     use Trait1, Trait2;
 
     public function function1() {
+        return;
+    }
+}
+
+class MultiTraitTestWithImplements implements MyInterface
+{
+    use Trait1, Trait2;
+
+    public function function1() {
+        return;
+    }
+
+    public function interfaceFunction() {
+        return;
+    }
+}
+
+class MultiTraitTestWithExtendsAndImplements extends ParentClass implements MyInterface
+{
+    use Trait1, Trait2;
+
+    public function function1() {
+        return;
+    }
+
+    public function interfaceFunction() {
         return;
     }
 }
