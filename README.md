@@ -82,6 +82,22 @@ So
     
 will not work.
 
+### Support class attributes grouped by visibility  (`attribute_grouped_visibility.php`)
+This filter supports declarations like
+
+    class Foo
+    {
+        private
+            /// the blue color
+            $blue,
+            /// the red color
+            $red;
+            
+        ...
+    }
+    
+by iteratively copying the keywords `private`, `protected` and `public` to the attributes.
+
 ## Credits
 Thanks to [Goran Rakic](http://stackoverflow.com/users/276152) for providing the class member hint filter in [this Stackoverflow answer](http://stackoverflow.com/a/8472180/3440545). 
 This gave me the first push to write more filters.  
