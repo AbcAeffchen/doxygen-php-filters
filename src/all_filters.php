@@ -15,7 +15,7 @@ $replace = '$1 $4 = array( $5 );';
 $source = preg_replace($regexp, $replace, $source);
 
 // add class member type hints
-$regexp = '#\@(var|type)\s+([^\s]+)([^/]+)/\s+(var|public|protected|private)(\s+static)?)\s+(\$[^\s;=]+)#';
+$regexp = '#\@(var|type)\s+([^\s]+)([^/]+)/\s+(var|public|protected|private)(\s+static)?\s+(\$[^\s;=]+)#';
 $replace = '$3 */ $4 $5 $2 $6';
 $source = preg_replace($regexp, $replace, $source);
 

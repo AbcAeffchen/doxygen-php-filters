@@ -25,7 +25,7 @@ $source = file_get_contents($argv[1]);
  *  private $var = 1;
  * ```
  */
-$regexp = '#\@(var|type)\s+([^\s]+)([^/]+)/\s+(var|public|protected|private)(\s+static)?)\s+(\$[^\s;=]+)#';
+$regexp = '#\@(var|type)\s+([^\s]+)([^/]+)/\s+(var|public|protected|private)(\s+static)?\s+(\$[^\s;=]+)#';
 $replace = '$3 */ $4 $5 $2 $6';
 $source = preg_replace($regexp, $replace, $source);
 
