@@ -98,10 +98,38 @@ This filter supports declarations like
     
 by iteratively copying the keywords `private`, `protected` and `public` to the attributes.
 
+### Laravel Cron Documentation (`laravel_cron.php`)
+Documentation like
+
+    /**
+     * Docs
+     */
+    \Cron::add('jobName', '* * * * *', function() 
+    {
+        ...
+    });
+    
+gets lost because the documentation comment is not followed by a function declaration. It also 
+not works if you move the documentation comment right in front of the `function()`, because doxygen
+is missing a function name. The filter is moving the documentation comment to the right place,
+removes the `Cron::add(...,...,` part and copies the name to the `function()` so it looks like this:
+
+    /**
+     * Docs
+     */
+    public function jobName() 
+    {
+        ...
+    });
+
+This also works if the documentation comment is already in the right place.
+
+Since this filter is very special to some users of Laravel, it is not included in the *all_filters* file.
+
 ## Credits
 Thanks to [Goran Rakic](http://stackoverflow.com/users/276152) for providing the class member hint filter in [this Stackoverflow answer](http://stackoverflow.com/a/8472180/3440545). 
 This gave me the first push to write more filters.  
-Thanks to [Lorenz Meyer](http://stackoverflow.com/users/1951708) for improving the traits filter.
-
+Thanks to [Lorenz Meyer](http://stackoverflow.com/users/1951708) for improving the traits filter.  
+Thanks to [madankundu](http://stackoverflow.com/users/1627702) for testing the laravel_cron filter.
 ## License
 Licensed under the GPL v2.0 License.
