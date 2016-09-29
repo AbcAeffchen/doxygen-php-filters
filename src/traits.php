@@ -20,7 +20,7 @@ $replace = 'class$1 extends $3 $2 {';
 $source = preg_replace($regexp, $replace, $source);
 
 // use traits by extending them (classes that already extending a class)
-$regexp = '#class([\s]+[\S]+[\s]+extends[\s]+[\S]+[\s]*)(implements[\s]+[\S]+[\s]*){[\s]+use([^;]+);#';
+$regexp = '#class([\s]+[\S]+[\s]+extends[\s]+[\S]+[\s]*)(implements[\s]+[\S]+[\s]*)?{[\s]+use([^;]+);#';
 $replace = 'class$1, $3 $2{';
 $source = preg_replace($regexp, $replace, $source);
 
